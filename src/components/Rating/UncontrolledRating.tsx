@@ -1,8 +1,6 @@
 import React, {useState} from "react";
 
-type UncontrolledRatingPropsType = {}
-
-function UncontrolledRating(props: UncontrolledRatingPropsType) {
+function UncontrolledRating() {
 
     const [value, setValue] = useState(0)
 
