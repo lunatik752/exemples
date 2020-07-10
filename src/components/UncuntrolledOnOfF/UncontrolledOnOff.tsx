@@ -3,7 +3,7 @@ import styles from './UncontrolledOnOff.module.css'
 
 type OnOfPropsType = {}
 
-function UncontrolledOnOff(props: OnOfPropsType) {
+export function UncontrolledOnOff(props: OnOfPropsType) {
 
     const [on, setOn] = useState(true);
 
@@ -33,5 +33,3 @@ function UncontrolledOnOff(props: OnOfPropsType) {
     )
 }
 
-
-export default UncontrolledOnOff;
