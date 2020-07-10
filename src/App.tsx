@@ -2,9 +2,10 @@ import React, {useState} from 'react';
 import './App.css';
 import Accordion from './components/Accordion/Accordion';
 import Rating, {RatingValueType} from "./components/Rating/Rating";
-import OnOff from "./components/OnOfF/OnOff";
+import UncontroledOnOff from "./components/UncuntrolledOnOfF/UncontrolledOnOff";
 import UncontrolledAccordion from "./components/Accordion/UncontrolledAccordion";
 import UncontrolledRating from './components/Rating/UncontrolledRating';
+import OnOff from './components/OnOfF/OnOff';
 
 function App() {
     console.log('Rendering App');
@@ -13,8 +14,16 @@ function App() {
 
     const [accordionCollapsed, setAccordionCollapsed] = useState(false);
 
+    const [on, setOn] = useState(false);
+
+
+
     const onCollapsedChange = () => {
         setAccordionCollapsed(!accordionCollapsed)
+    }
+
+    const  onOnChanged = () => {
+        setOn(!on)
     }
 
 
@@ -33,9 +42,9 @@ function App() {
             <Rating value={4}/>
             <Rating value={5}/>*/}
 
-            <OnOff/>
-            <OnOff/>
-            <OnOff/>
+            <UncontroledOnOff/>
+            <OnOff  on={on}
+                    onOnChanged={onOnChanged} />
             <Accordion titleValue={'Menu'}
                        accordionCollapsed={accordionCollapsed}
                        onCollapsedChange={onCollapsedChange}
