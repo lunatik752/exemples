@@ -6,7 +6,7 @@ type AccordionPropsType = {
     onCollapsedChange: () => void
 }
 
-function Accordion(props: AccordionPropsType) {
+export function Accordion(props: AccordionPropsType) {
     console.log('Rendering Accordion');
     return (
         <div>
@@ -24,10 +24,10 @@ type AccordionTitlePropsType = {
 
 }
 
-function AccordionTitle(props: AccordionTitlePropsType) {
+ function AccordionTitle(props: AccordionTitlePropsType) {
     console.log('Rendering AccordionTitle');
     return (
-        <h3 onClick={props.onCollapsedChange}>{props.title}</h3>
+        <h3 onClick={() => props.onCollapsedChange()}>{props.title}</h3>
     );
 }
 
@@ -49,4 +49,3 @@ function AccordionBody(props: AccordionBodyPropsType) {
     }
 }
 
-export default Accordion;
