@@ -3,11 +3,11 @@ import styles from './OnOff.module.css'
 
 type OnOfPropsType = {
     on: boolean,
-    onOnChanged: () => void
+    onOnChanged: (on: boolean) => void
 
 }
 
-function OnOff(props: OnOfPropsType) {
+export function OnOff(props: OnOfPropsType) {
 
     const onStyle = props.on ? styles.on + ' ' + styles.backgroundGreen : styles.on;
     const offStyle = props.on ? styles.off : styles.on + ' ' + styles.backgroundRed;
@@ -18,10 +18,10 @@ function OnOff(props: OnOfPropsType) {
         <div>
             <h3>Controlled OnOff</h3>
             <div className={styles.onOffWrapper}>
-                <div className={onStyle} onClick={props.onOnChanged}>
+                <div className={onStyle} onClick={() => {props.onOnChanged(true)}}>
                     ON
                 </div>
-                <div className={offStyle} onClick={props.onOnChanged}>
+                <div className={offStyle} onClick={() => {props.onOnChanged(false)}}>
                     OFF
                 </div>
                 <div className={indicatorStyle}>
@@ -30,6 +30,3 @@ function OnOff(props: OnOfPropsType) {
             </div>
         </div>)
 }
-
-
-export default OnOff;

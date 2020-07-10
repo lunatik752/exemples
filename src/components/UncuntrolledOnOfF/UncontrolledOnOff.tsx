@@ -7,9 +7,7 @@ function UncontrolledOnOff(props: OnOfPropsType) {
 
     const [on, setOn] = useState(true);
 
-    const onOnOffClick = () => {
-        setOn(!on)
-    }
+
 
 
     const onStyle = on ? styles.on + ' ' + styles.backgroundGreen : styles.on;
@@ -21,10 +19,10 @@ function UncontrolledOnOff(props: OnOfPropsType) {
         <div>
             <h3>Uncontrolled OnOff</h3>
             <div className={styles.onOffWrapper}>
-                <div className={onStyle} onClick={onOnOffClick}>
+                <div className={onStyle} onClick={() => setOn(true)}>
                     ON
                 </div>
-                <div className={offStyle} onClick={onOnOffClick}>
+                <div className={offStyle} onClick={() => setOn(false)}>
                     OFF
                 </div>
                 <div className={indicatorStyle}>

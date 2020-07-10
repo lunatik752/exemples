@@ -5,7 +5,7 @@ import Rating, {RatingValueType} from "./components/Rating/Rating";
 import UncontroledOnOff from "./components/UncuntrolledOnOfF/UncontrolledOnOff";
 import UncontrolledAccordion from "./components/Accordion/UncontrolledAccordion";
 import UncontrolledRating from './components/Rating/UncontrolledRating';
-import OnOff from './components/OnOfF/OnOff';
+import {OnOff} from './components/OnOfF/OnOff';
 
 function App() {
     console.log('Rendering App');
@@ -22,8 +22,8 @@ function App() {
         setAccordionCollapsed(!accordionCollapsed)
     }
 
-    const  onOnChanged = () => {
-        setOn(!on)
+    const  onOnChanged = (on: boolean) => {
+        setOn(on)
     }
 
 
