@@ -1,6 +1,12 @@
 import React, {useState} from "react";
+import {RatingValueType} from "./Rating";
 
-function UncontrolledRating() {
+type UncontrolledRatingPropsType = {
+    defaultValue?: RatingValueType,
+    onChange?: (value: RatingValueType) => void
+}
+
+function UncontrolledRating(props: UncontrolledRatingPropsType) {
 
     const [value, setValue] = useState(0)
 
@@ -18,13 +24,14 @@ function UncontrolledRating() {
 type StarPropsType = {
     selected: boolean,
     value: 1 | 2 | 3 | 4 | 5,
-    setValue: (value: 1 | 2 | 3 | 4 | 5) => void
+    setValue: (value: 1 | 2 | 3 | 4 | 5) => void,
+    onChange?: (value: RatingValueType) => void
 
 }
 
 function Star(props: StarPropsType) {
 
-    const onSpanClick = () => {props.setValue(props.value)}
+    const onSpanClick = () => {props.setValue(props.value); }
 
     return (
         <span onClick={onSpanClick}>

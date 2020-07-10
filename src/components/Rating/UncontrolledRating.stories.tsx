@@ -1,4 +1,5 @@
 import React from 'react';
+import { action } from '@storybook/addon-actions';
 import UncontrolledRating from './UncontrolledRating';
 
 export default {
@@ -6,7 +7,8 @@ export default {
     component: UncontrolledRating,
 };
 
-export const changeRating = () => {
+const callBack = action('rating changed inside component')
 
-    return <UncontrolledRating/>
+export const changeRating = () => {
+    return <UncontrolledRating defaultValue={2} onChange={callBack}/>
 }
