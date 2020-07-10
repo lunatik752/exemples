@@ -1,0 +1,43 @@
+.onOffWrapper {
+    margin: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.on {
+    width: 60px;
+    height: 30px;
+    border: black 1px solid;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 2px;
+    cursor: pointer;
+}
+
+.off {
+    width: 60px;
+    height: 30px;
+    border: black 1px solid;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.indicator {
+    width: 20px;
+    height: 20px;
+    border: black 1px solid;
+    border-radius: 10px;
+    margin-left: 10px;
+
+}
+
+.backgroundGreen {
+    background-color: green;
+}
+
+.backgroundRed {
+    background-color: red;
+}
