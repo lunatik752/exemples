@@ -1,0 +1,27 @@
+.select span.main {
+    border: 1px solid black;
+    display: inline-block;
+    min-height: 30px;
+    min-width: 60px;
+    cursor: pointer;
+}
+
+.items {
+    display: none;
+    padding: 10px;
+    position: absolute;
+    border: 1px solid black;
+
+}
+
+.select.active .items {
+    display: block;
+}
+
+.item {
+    cursor: pointer;
+}
+
+.item.selected {
+    background: deepskyblue;
+}
