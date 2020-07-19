@@ -3,11 +3,9 @@ import styles from './UncontrolledOnOff.module.css'
 
 type OnOfPropsType = {}
 
-export function UncontrolledOnOff(props: OnOfPropsType) {
+function UncontrolledOnOffWithoutMemo(props: OnOfPropsType) {
 
     const [on, setOn] = useState(true);
-
-
 
 
     const onStyle = on ? styles.on + ' ' + styles.backgroundGreen : styles.on;
@@ -32,4 +30,6 @@ export function UncontrolledOnOff(props: OnOfPropsType) {
         </div>
     )
 }
+
+export const UncontrolledOnOff = React.memo(UncontrolledOnOffWithoutMemo)
 

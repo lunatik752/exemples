@@ -12,7 +12,7 @@ type SelectPropsType = {
     items: ItemType[]
 }
 
-function Select(props: SelectPropsType) {
+function SelectWithoutMemo(props: SelectPropsType) {
 
     const [activeClass, setActiveClass] = useState(false)
     const [hoveredElementValue, setHoveredElementValue] = useState(props.value)
@@ -69,4 +69,4 @@ function Select(props: SelectPropsType) {
 }
 
 
-export default Select;
+export const Select = React.memo(SelectWithoutMemo)

@@ -6,7 +6,7 @@ type UncontrolledRatingPropsType = {
     onChange?: (value: RatingValueType) => void
 }
 
-function UncontrolledRating(props: UncontrolledRatingPropsType) {
+function UncontrolledRatingWithoutMemo(props: UncontrolledRatingPropsType) {
 
     const [value, setValue] = useState(0)
 
@@ -29,7 +29,9 @@ type StarPropsType = {
 
 }
 
-function Star(props: StarPropsType) {
+export const UncontrolledRating = React.memo(UncontrolledRatingWithoutMemo)
+
+function StarWithoutMemo(props: StarPropsType) {
 
     const onSpanClick = () => {props.setValue(props.value); }
 
@@ -40,4 +42,4 @@ function Star(props: StarPropsType) {
     )
 }
 
-export default UncontrolledRating;
+const Star = React.memo(StarWithoutMemo)

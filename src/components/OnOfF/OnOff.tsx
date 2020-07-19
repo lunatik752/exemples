@@ -6,8 +6,7 @@ type OnOfPropsType = {
     onOnChanged: (on: boolean) => void
 
 }
-
-export function OnOff(props: OnOfPropsType) {
+function OnOffWithoutMemo(props: OnOfPropsType) {
 
     const onStyle = props.on ? styles.on + ' ' + styles.backgroundGreen : styles.on;
     const offStyle = props.on ? styles.off : styles.on + ' ' + styles.backgroundRed;
@@ -30,3 +29,5 @@ export function OnOff(props: OnOfPropsType) {
             </div>
         </div>)
 }
+
+export const OnOff = React.memo(OnOffWithoutMemo)

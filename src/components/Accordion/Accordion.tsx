@@ -1,6 +1,6 @@
 import React from "react";
 
-type ItemType ={
+type ItemType = {
     title: string,
     value: any
 }
@@ -13,7 +13,7 @@ type AccordionPropsType = {
     onClick: (value: any) => void
 }
 
-export function Accordion(props: AccordionPropsType) {
+function AccordionWithoutMemo(props: AccordionPropsType) {
     console.log('Rendering Accordion');
     return (
         <div>
@@ -22,10 +22,12 @@ export function Accordion(props: AccordionPropsType) {
 
             {!props.accordionCollapsed && <AccordionBody
                 items={props.items}
-            onClick={props.onClick}/>}
+                onClick={props.onClick}/>}
         </div>
     );
 }
+
+export const Accordion = React.memo(AccordionWithoutMemo)
 
 type AccordionTitlePropsType = {
     title: string,
@@ -33,28 +35,33 @@ type AccordionTitlePropsType = {
 
 }
 
-function AccordionTitle(props: AccordionTitlePropsType) {
+function AccordionTitleWithoutMemo(props: AccordionTitlePropsType) {
     console.log('Rendering AccordionTitle');
     return (
         <h3 onClick={() => props.onCollapsedChange()}>{props.title}</h3>
     );
 }
 
+export const AccordionTitle = React.memo(AccordionTitleWithoutMemo)
+
 type AccordionBodyPropsType = {
     items: ItemType[],
     onClick: (value: any) => void
 }
 
-function AccordionBody(props: AccordionBodyPropsType) {
+function AccordionBodyWithoutMemo(props: AccordionBodyPropsType) {
     console.log('Rendering AccordionBody');
     {
         return (
             <div>
                 <ul>
-                    {props.items.map((i, index) => <li key={index} onClick={() => {props.onClick(i.value)}}>{i.title}</li>)}
+                    {props.items.map((i, index) => <li key={index} onClick={() => {
+                        props.onClick(i.value)
+                    }}>{i.title}</li>)}
                 </ul>
             </div>
         );
     }
 }
 
+export const AccordionBody = React.memo(AccordionBodyWithoutMemo)
