@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from "react";
 
 export default {
-    title: 'useEffect demo',
+    title: 'UseEffect demo',
 };
 
 
@@ -36,4 +36,37 @@ export const SimpleExample = () => {
 
     </>
 }
+
+export const SetTimeoutExample = () => {
+
+    const [fake, setFake] = useState(1);
+    const [count, setCount] = useState(1);
+
+    console.log('SetTimeoutExample')
+
+
+    // useEffect(() => {
+    //     setTimeout(() => {
+    //         console.log('setTimeout')
+    //         document.title = count.toString()
+    //     }, 1000)
+    // }, [count])
+
+
+    useEffect(() => {
+        setInterval(() => {
+            setCount(state => state +1)
+        }, 1000)
+    }, [])
+
+
+    return <>
+        Hello, counter:  {count}  -  fake: {fake}
+        {/*<button onClick={() => setCount(count + 1)}>add +</button>*/}
+        {/*<button onClick={() => setFake(fake + 1)}>fake add +</button>*/}
+        {fake}
+
+    </>
+}
+
 
