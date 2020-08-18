@@ -1,11 +1,11 @@
 import React, {useEffect, useState} from "react";
 
 export default {
-    title: 'Clock',
+    title: 'MyClock',
 };
 
 
-export const ClockExample = () => {
+export const MyClockExample = () => {
 
 
     const [now, setNow] = useState(new Date());
