@@ -1,6 +1,6 @@
 import React from "react";
 import {ClockViewPropsType} from "./Clock";
-import './AnalogClockView.css'
+import styles from './AnalogClockView.module.css'
 
 
 export const AnalogClockView: React.FC<ClockViewPropsType> = ({data}) => {
@@ -17,12 +17,12 @@ export const AnalogClockView: React.FC<ClockViewPropsType> = ({data}) => {
     };
 
     return (
-       <div className={"clock"}>
-           <div className={"analog-clock"}>
-               <div className={"dial seconds"} style={secondsStyle} />
-               <div className={"dial minutes"} style={minutesStyle} />
-               <div className={"dial hours"} style={hoursStyle} />
-           </div>
+        <div className={styles.clock}>
+            <div className={styles["analog-clock"]}>
+                <div className={`${styles.dial} ${styles.seconds}`} style={secondsStyle}/>
+                <div className={`${styles.dial} ${styles.minutes}`} style={minutesStyle}/>
+                <div className={`${styles.dial} ${styles.hours}`} style={hoursStyle}/>
+            </div>
         </div>
     )
 }
