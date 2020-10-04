@@ -6,7 +6,7 @@ type PropsType = {
     mode: 'digital' | 'analog'
 }
 
-export const getTwoDigitsString = (num: number) => (num < 10) ? '0' + num : num;
+
 
 export const Clock: React.FC<PropsType> = (props) => {
 
