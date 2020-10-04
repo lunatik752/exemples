@@ -91,3 +91,28 @@ export const ResetEffectExample = () => {
         <button onClick={() => setCount(count + 1)}>add +</button>
     </>
 }
+
+
+
+export const KeysTrackerExample = () => {
+
+    const [text, setText] = useState('');
+
+    console.log('Component render with ' +  text)
+
+    useEffect(() => {
+        let handler = (e: KeyboardEvent) => {
+            console.log(e.key)
+            setText((state) => state + e.key)
+        };
+        window.addEventListener('keypress', handler)
+return () => {
+    window.removeEventListener('keypress', handler)
+}
+    }, [])
+
+
+    return <>
+        Typed text :  {text}
+    </>
+}
